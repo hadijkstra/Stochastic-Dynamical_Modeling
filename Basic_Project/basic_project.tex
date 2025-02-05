@@ -1,0 +1,103 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+
+%SetFonts
+
+%SetFonts
+
+\begin{document}
+
+%\section{}
+%\subsection{}
+
+
+\centerline{{\bf Basic Project: Stochastic Models for Pacific SST and SSH variability}} 
+\vspace{1cm} 
+
+In this project, you will practice with the analysis of observations   and with several 
+conceptual stochastic models to explain certain aspects of these data.  Use the Jupyter
+notebooks provided on GitHub and make a new Jupyter  notebook for all computations 
+below.
+
+\centerline{{\bf Part A, Deadline Report: Friday 7/2 at 13:00}}  
+
+\begin{itemize}
+\item[(i)] Read in the two time series of the corresponding data file for this project
+(same data set as we used in class). 
+The data consists of sea surface height (SSH) and sea surface temperature (SST) 
+somewhere in the  Pacific Ocean between 1993 -- 2018.   Plot both the SSH and SST 
+anomalies (w.r.t. to the time mean). 
+
+\item[(ii)] Remove the seasonal cycle and long-term trend.   Determine the probability 
+density function (PDF) of the time series,  calculate the Fourier spectra and determine 
+the power law coefficient of the spectral power decay at high frequency.  Do this for 
+both SST and SSH. 
+
+\end{itemize}
+
+\noindent Consider the following stochastic differential equation 
+%
+\[
+dX_t = -\gamma X_t dt + \sigma dW_t 
+\]
+%
+with $X_0$ given and real parameters $\gamma$ and $\sigma$. 
+
+\begin{itemize}
+
+\item[(iii)] Provide a method to estimate the parameters $\gamma$ 
+and  $\sigma$  for  both  SSH and SST and  determine their `best' 
+values.    
+
+\item[(iv)] For these best estimates, compute a  realization 
+of the stochastic model and determine the equilibrium PDF. Compare this 
+PDF for the estimated parameters  with the PDF of SSH and 
+SST (as in (ii)). Discuss the differences between SST and SSH 
+data. 
+
+\end{itemize} 
+
+\newpage 
+
+\centerline{{\bf Part B}}  
+
+Consider next the following stochastic differential equation 
+%
+\[
+dX_t = \lambda X_t dt + (\mu + \nu X_t)  dW_t
+\]
+%
+with $X_0$ given and real parameters $\lambda$, $\mu$
+and $\nu$. This stochastic model is called CAM (Correlated  
+Additive-Multiplicative) noise. 
+
+\begin{itemize}
+
+\item[(i)]  Determine the analytical equilibrium PDF solution  
+of the Fokker-Planck  equation associated with this stochastic 
+differential equation. 
+
+\item[(ii)]  Determine the variance  associated with this  
+probability density function and plot it as a function 
+of $\nu$. 
+
+\item[(iii)] Provide a method to estimate the parameters $\lambda$, 
+$\mu$ and $\nu$ for the observations for SST and SSH and  determine 
+their values. Give a physical argument why these  parameters are 
+different for SST and SSH.  
+
+\item[(iv)] 
+Discuss the differences in probability density functions between 
+the two different cases  $\nu = 0$ as in part A and $\nu \neq 0$ 
+in part B.  
+
+\end{itemize}
+
+
+\end{document}  
